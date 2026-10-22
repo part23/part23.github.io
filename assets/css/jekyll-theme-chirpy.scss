@@ -207,3 +207,35 @@
     left: 200px;
   }
 }
+
+/* Code blocks: indent text, drop the language label, half-height header */
+.content div[class^='language-'] {
+  .highlight > code,
+  .highlight > pre {
+    display: block;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .code-header {
+    height: 1.125rem;
+    margin-top: 0.25rem;
+
+    &::before {
+      width: 0.6rem;
+      height: 0.6rem;
+      box-shadow:
+        1rem 0 0 var(--code-header-muted-color),
+        2rem 0 0 var(--code-header-muted-color);
+    }
+
+    button {
+      height: 1.125rem;
+      width: 1.75rem;
+    }
+  }
+
+  &:not([file]) .code-header span {
+    display: none;
+  }
+}
