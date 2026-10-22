@@ -102,57 +102,9 @@
   --tb-hover-bg: #e9f0fa;
 }
 
-@mixin navy-dark {
-  @include navy-sidebar;
-
-  --sidebar-bg: #08152a;
-  --sidebar-border-color: #142a4a;
-  --main-bg: #0d1a2e;
-  --main-border-color: #1a2d4a;
-  --topbar-bg: rgb(13 26 46 / 70%);
-  --card-bg: #12223b;
-  --card-header-bg: #172a47;
-  --card-hover-bg: #1c3254;
-  --highlight-bg-color: #0a1424;
-  --search-border-color: #1f3556;
-  --search-tag-bg: #12223b;
-  --btn-border-color: #1f3556;
-  --tag-border: #2a4568;
-  --tag-hover: #1c3254;
-  --categories-border: rgb(42 69 104 / 60%);
-  --categories-hover-bg: #1c3254;
-  --text-color: #c3cede;
-  --heading-color: #e4ebf5;
-  --link-color: #8fb8f0;
-  --link-underline-color: #2f5583;
-  --toc-highlight: #8fb8f0;
-  --prompt-info-bg: rgb(31 78 140 / 35%);
-  --tb-head-bg: #172a47;
-  --tb-head-border: #4f7fbf;
-  --tb-odd-bg: #0d1a2e;
-  --tb-even-bg: #112038;
-  --tb-border-color: #1f3556;
-  --tb-hover-bg: #1a3052;
-}
-
+:root,
 :root[data-bs-theme='light'] {
   @include navy-light;
-}
-
-:root[data-bs-theme='dark'] {
-  @include navy-dark;
-}
-
-@media (prefers-color-scheme: light) {
-  :root:not([data-bs-theme]) {
-    @include navy-light;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-bs-theme]) {
-    @include navy-dark;
-  }
 }
 
 /* Widen the content area: use the full width next to the sidebar */
