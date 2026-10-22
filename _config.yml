@@ -16,7 +16,7 @@ timezone: Asia/Seoul
 
 title: part23 # the main title
 
-tagline: Exploit & Vulnerability Research
+tagline: Exploit & Vulnerability Research (KO / EN)
 
 description: >- # used by seo meta and the atom feed
   Full chain exploit, 0-day/N-day 분석 - Google, Apple, Firefox, Samsung.
