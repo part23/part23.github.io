@@ -111,3 +111,13 @@ html[data-mode='dark'] {
     @include navy-dark;
   }
 }
+
+/* Widen the content area: fill the space next to the sidebar instead of centering */
+@media all and (min-width: 850px) {
+  #main-wrapper > .container {
+    max-width: 1600px;
+    margin-left: 0;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
