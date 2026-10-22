@@ -14,25 +14,56 @@
 
 /* append your custom style below */
 
-/* Wrap table cells instead of scrolling horizontally */
+/* Tables: fit to content, wrap long cells, clear header and row tracking */
 .content .table-wrapper > table {
-  width: 100%;
+  width: auto;
   min-width: 0;
-}
+  max-width: 100%;
+  border: 1px solid var(--tb-border-color);
+  border-collapse: collapse;
 
-.content .table-wrapper > table thead th,
-.content .table-wrapper > table tbody tr td {
-  white-space: normal;
-  word-break: keep-all;
-  overflow-wrap: anywhere;
-  vertical-align: top;
+  thead {
+    border-bottom: 2px solid var(--tb-head-border);
+  }
+
+  thead th {
+    background-color: var(--tb-head-bg);
+    color: var(--heading-color);
+    font-weight: 600;
+  }
+
+  thead th,
+  tbody tr td {
+    white-space: normal;
+    overflow-wrap: break-word;
+    vertical-align: top;
+    line-height: 1.55;
+    padding: 0.55rem 0.9rem;
+  }
+
+  /* first column is usually a label (CVE, product, name): keep it on one line */
+  thead th:first-child,
+  tbody tr td:first-child {
+    white-space: nowrap;
+  }
+
+  tbody tr:hover {
+    background-color: var(--tb-hover-bg);
+  }
 }
 
 @media all and (max-width: 576px) {
-  .content .table-wrapper > table thead th,
-  .content .table-wrapper > table tbody tr td {
-    padding: 0.35rem 0.5rem;
-    font-size: 88%;
+  .content .table-wrapper > table {
+    thead th,
+    tbody tr td {
+      padding: 0.4rem 0.55rem;
+      font-size: 88%;
+    }
+
+    thead th:first-child,
+    tbody tr td:first-child {
+      white-space: normal;
+    }
   }
 }
 
@@ -63,6 +94,12 @@
   --categories-icon-hover-color: #1f4e8c;
   --prompt-info-bg: #e3ecf8;
   --prompt-info-icon-color: #1f4e8c;
+  --tb-head-bg: #e6edf7;
+  --tb-head-border: #1f4e8c;
+  --tb-odd-bg: #ffffff;
+  --tb-even-bg: #f6f8fc;
+  --tb-border-color: #dde4ef;
+  --tb-hover-bg: #e9f0fa;
 }
 
 @mixin navy-dark {
@@ -90,6 +127,12 @@
   --link-underline-color: #2f5583;
   --toc-highlight: #8fb8f0;
   --prompt-info-bg: rgb(31 78 140 / 35%);
+  --tb-head-bg: #172a47;
+  --tb-head-border: #4f7fbf;
+  --tb-odd-bg: #0d1a2e;
+  --tb-even-bg: #112038;
+  --tb-border-color: #1f3556;
+  --tb-hover-bg: #1a3052;
 }
 
 html[data-mode='light'] {
