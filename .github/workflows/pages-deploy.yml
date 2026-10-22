@@ -51,8 +51,6 @@ jobs:
           JEKYLL_ENV: "production"
 
       - name: Test site
-        # TODO: remove once the link-check failure is fixed
-        continue-on-error: true
         run: |
           bundle exec htmlproofer _site \
             \-\-disable-external \
