@@ -139,3 +139,71 @@
 .content div[class^='language-'] {
   max-width: 960px;
 }
+
+/* Narrower sidebar on desktop (about 2/3 of the default); mobile drawer unchanged */
+@media all and (min-width: 850px) {
+  #sidebar {
+    width: 175px;
+
+    #avatar {
+      width: 5rem;
+      height: 5rem;
+    }
+
+    .profile-wrapper {
+      padding-left: 1.25rem;
+      padding-right: 1rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .site-title {
+      font-size: 1.4rem;
+    }
+
+    ul li.nav-item {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+
+    .sidebar-bottom {
+      padding-left: 1.25rem;
+      padding-right: 0.75rem;
+    }
+  }
+
+  #main-wrapper {
+    margin-left: 175px;
+  }
+
+  #toc-popup {
+    left: 175px;
+  }
+}
+
+@media all and (min-width: 1650px) {
+  #sidebar {
+    width: 200px;
+
+    .profile-wrapper {
+      padding-left: 1.5rem;
+    }
+
+    ul li.nav-item {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .sidebar-bottom {
+      padding-left: 1.5rem;
+    }
+  }
+
+  #main-wrapper {
+    margin-left: 200px;
+  }
+
+  #toc-popup {
+    left: 200px;
+  }
+}
