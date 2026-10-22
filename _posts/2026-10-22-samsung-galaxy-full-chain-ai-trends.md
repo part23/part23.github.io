@@ -104,15 +104,15 @@ Enterprises that prioritize patches using Samsung CNA scores alone may be left e
 Tracing how Samsung exploits flow from discovery to final use reveals a clear pattern.
 
 ```text
-[Discovery]              [Weaponization]          [Distribution]       [End Use]
+Discovery          Weaponization             Distribution                 End use
+───────────────    ──────────────────────    ─────────────────────────    ───────────────────────────
+NSO ERISED      →  WhatsApp delivery      →  725 devices surveilled    →  State actors
+P0 Quram audit  →  Defensive disclosure   →  LANDFALL patched          →  ITW stopped
+VEGA AI         →  GhostLock              →  Root-My-Galaxy, KSuRoot   →  Community (1,451★)
+diabl0w DFRoot  →  GhostSam               →  DirtyFrag-Galaxy          →  Chinese community (Coolapk)
+DFRoot fork     →  GalaxyCrash (stable)   →  debian-on-s23 (server)    →  Non-experts (homelab)
 
-NSO ERISED ────────────→ WhatsApp delivery ─────→ 725 devices surveilled ← State actors
-P0 Quram audit ─────────→ (defensive disclosure) → LANDFALL patched       ← ITW stopped
-VEGA AI → GhostLock ──→ Root-My-Galaxy ──→ KSuRoot → 1,451★              ← Community
-          ↓                   ↓              ↓
-    diabl0w DFRoot ──→ GhostSam ──→ DirtyFrag-Galaxy → Coolapk            ← Chinese community
-          ↓                                  ↓
-    GalaxyCrash (stability) ──────→ debian-on-s23 (server) → Homelab      ← Non-experts
+Lineage: GhostLock → DFRoot → GhostSam / DirtyFrag-Galaxy → GalaxyCrash
 ```
 
 **Notable points:**
@@ -140,14 +140,14 @@ Samsung-specific attack surfaces identified in the second half of 2026:
 ### How the Media Parser Attack Surface Is Spreading
 
 ```text
-2024:   Quram DNG/JPEG ━━━━━━━━━━━ LANDFALL ITW
-          ↓
-2025:   Quram continues (9 from P0) ━━━━━━ TIFF
-          ↓
-2026H1: VC1/MPEG4/FLAC/QCELP
-          ↓
-2026H2: ★HEIF ━━━ ★MKV ━━━ ★TTS ━━━ ★AI sound separation
-          ↓
+2024      Quram DNG/JPEG ─────────────── LANDFALL (ITW)
+            ↓
+2025      Quram continued (9 from P0) ── TIFF
+            ↓
+2026 H1   VC1 / MPEG4 / FLAC / QCELP
+            ↓
+2026 H2   ★HEIF ── ★MKV ── ★TTS ── ★AI sound separation
+            ↓
           [Audio codecs: P0 work in progress]
 ```
 
@@ -169,19 +169,19 @@ As of October 2026, public bypass research exists for every major security layer
 ### Timeline of Bypass Techniques
 
 ```text
-2026-06: GhostLock disclosed (AI-discovered)
-    ↓
-2026-07~08: Per-device ports (KASLR bypass)
-    ↓
-2026-09: DFRoot integration (DirtyFrag + GhostLock)
-    ↓
-2026-10-15: BTI/PAC bypass ←── ARM hardware CFI
-2026-10-16: SELinux bypass on production kernels
-2026-10-17: MTEscape presented at Hexacon ←── ARM MTE
-    ↓
-2026-10-19: Stability forks appear (code review stage)
-    ↓
-[Prediction] 2026 Q4 ~ 2027 Q1: A chain that bypasses all four layers together
+2026-06       GhostLock disclosed (AI-discovered)
+   ↓
+2026-07~08    Per-device ports (KASLR bypass)
+   ↓
+2026-09       DFRoot integration (DirtyFrag + GhostLock)
+   ↓
+2026-10-15    BTI/PAC bypass                ← ARM hardware CFI
+2026-10-16    SELinux bypass on production kernels
+2026-10-17    MTEscape presented at Hexacon ← ARM MTE
+   ↓
+2026-10-19    Stability forks appear (code review stage)
+   ↓
+Prediction    2026 Q4 ~ 2027 Q1: one chain bypassing all four layers
 ```
 
 And **none of these hardware mitigations matter against logic bug chains:**
