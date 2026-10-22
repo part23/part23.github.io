@@ -239,3 +239,8 @@
     display: none;
   }
 }
+
+/* Hide line numbers (rouge still emits them so the code keeps its <pre> whitespace) */
+.content .highlight table td.rouge-gutter {
+  display: none;
+}

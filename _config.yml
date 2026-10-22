@@ -174,7 +174,7 @@ kramdown:
     span:
       line_numbers: false
     block:
-      line_numbers: false
+      line_numbers: true # numbers are hidden with CSS; keeps <pre> so whitespace survives compression
       start_line: 1
 
 collections:
