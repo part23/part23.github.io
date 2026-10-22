@@ -112,12 +112,30 @@ html[data-mode='dark'] {
   }
 }
 
-/* Widen the content area: fill the space next to the sidebar instead of centering */
+/* Widen the content area: use the full width next to the sidebar */
 @media all and (min-width: 850px) {
   #main-wrapper > .container {
-    max-width: 1600px;
+    max-width: none;
     margin-left: 0;
     padding-left: 2rem !important;
-    padding-right: 2rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+
+/* Body takes the remaining width; the TOC panel stays narrow on the far right */
+@media all and (min-width: 1200px) {
+  #main-wrapper > .container > .row > main,
+  #tail-wrapper {
+    flex: 1 1 0;
+    max-width: none;
+  }
+
+  #panel-wrapper {
+    flex: 0 0 260px;
+    max-width: 260px;
+  }
+
+  #tail-wrapper {
+    margin-right: 260px;
   }
 }
