@@ -182,3 +182,8 @@
     margin-right: 260px;
   }
 }
+
+/* Code blocks: cap the width; longer lines scroll inside the block */
+.content div[class^='language-'] {
+  max-width: 960px;
+}
