@@ -135,22 +135,22 @@
   --tb-hover-bg: #1a3052;
 }
 
-html[data-mode='light'] {
+:root[data-bs-theme='light'] {
   @include navy-light;
 }
 
-html[data-mode='dark'] {
+:root[data-bs-theme='dark'] {
   @include navy-dark;
 }
 
 @media (prefers-color-scheme: light) {
-  html:not([data-mode]) {
+  :root:not([data-bs-theme]) {
     @include navy-light;
   }
 }
 
 @media (prefers-color-scheme: dark) {
-  html:not([data-mode]) {
+  :root:not([data-bs-theme]) {
     @include navy-dark;
   }
 }
